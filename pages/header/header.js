@@ -1,6 +1,6 @@
 import Head from "../../node_modules/next/head"
 import dynamic from "../../node_modules/next/dynamic"
-import styles from "../../styles/header/Header.module.css"
+import styles from "../../styles/Header.module.css"
 
 const ParticlesBg = dynamic(
   () => {
