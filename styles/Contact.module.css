@@ -1,18 +1,17 @@
 .second {
-  padding: 5rem 16px;
+  padding: 0 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 50vh;
-  width: 100vw;
+  height: 50vh;
+  width: 100%;
   background-color: black;
 }
 
 .second div {
   color: #FFF;
-  padding-top: 16px;
 }
 
 .experience {
