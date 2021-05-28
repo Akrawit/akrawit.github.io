@@ -1,5 +1,5 @@
 .second {
-  padding: 5rem 0;
+  padding: 5rem 16px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,6 @@
   max-height: 50vh;
   width: 100vw;
   background-color: black;
-  padding: 16px;
 }
 
 .second div {
