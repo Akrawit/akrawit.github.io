@@ -4,5 +4,11 @@
     "files": [
       "static/chunks/node_modules_next_dist_client_dev_noop_js.js"
     ]
+  },
+  "header/header.js -> particles-bg": {
+    "id": "./node_modules/particles-bg/dist/index.es.js",
+    "files": [
+      "static/chunks/vendors-node_modules_particles-bg_dist_index_es_js.js"
+    ]
   }
 }
