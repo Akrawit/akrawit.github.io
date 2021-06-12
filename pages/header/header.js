@@ -20,7 +20,7 @@ export default function Header() {
         <section className={styles.firstSection} >
           <ParticlesBg type="cobweb" bg={true} />
           <h1 className={styles.title}>Welcome to my page</h1>
-          <h2>I'm a developer, runner, crypto investor, traveler.</h2>
+          <h2>I'm a developer, runner, traveler.</h2>
         </section>
       </main>
     </header>
