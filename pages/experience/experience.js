@@ -11,6 +11,7 @@ export default function Experience() {
               <li className={styles.experience}> 2017- present: Software Engineer at Agoda services </li>
               <li className={styles.experience}> 2015 - 2017: Full Stack Developer at Wongnai. </li>
               <li className={styles.experience}> 2012 - 2014: Java developer at CDG systems.</li>
+              <li className={styles.experience}> 2010 Intern at Universiti Teknologi Malaysia(UTM) in Malaysia. </li>
 
             </ul>
             <h3> Education: </h3>
