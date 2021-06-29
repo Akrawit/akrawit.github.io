@@ -17,7 +17,7 @@ export default function Experience() {
               </div>
               <div>
                 <a href='https://www.linkedin.com/company/agoda' target="_blank">
-                  <Image src="/agoda.png" alt="agoda-logo" width="78px" height="78px" styles={styles.logo} />
+                  <img src="/agoda.png" alt="agoda-logo" className={styles.logo} />
                 </a>
               </div>
             </li>
@@ -29,7 +29,7 @@ export default function Experience() {
               </div>
               <div>
                 <a href='https://www.linkedin.com/company/wongnai.com/' target="_blank">
-                  <Image src="/wongnai.png" alt="wongnai-logo" width="78px" height="78px" styles={styles.logo} />
+                  <img src="/wongnai.png" alt="wongnai-logo" className={styles.logo} />
                 </a>
               </div>
 
@@ -42,7 +42,7 @@ export default function Experience() {
               </div>
               <div>
                 <a href='https://www.linkedin.com/company/cdg-systems-cdgs-/' target="_blank">
-                  <Image src="/CDGS.png" alt="cdgs-logo" width="78px" height="78px" styles={styles.logo} />
+                  <img src="/CDGS.png" alt="cdgs-logo" className={styles.logo} />
                 </a>
               </div>
             </li>
@@ -54,7 +54,7 @@ export default function Experience() {
               </div>
               <div>
                 <a href='https://www.linkedin.com/school/universiti-teknologi-malaysia/' target="_blank">
-                  <Image src="/UTM.png" alt="utm-logo" width="78px" height="78px" styles={styles.logo} />
+                  <img src="/UTM.png" alt="utm-logo" className={styles.logo} />
                 </a>
               </div>
             </li>
