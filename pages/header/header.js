@@ -10,6 +10,13 @@ const ParticlesBg = dynamic(
 )
 
 export default function Header() {
+  let config = {
+    position: "absolute",
+    zIndex: -1,
+    top: 0,
+    left: 0,
+    opacity: 0.2,
+  }
   return (
     <header id="head" className={styles.main}>
       <Head>
@@ -18,7 +25,7 @@ export default function Header() {
       </Head>
       <main className={styles.main}>
         <section className={styles.firstSection} >
-          <ParticlesBg type="cobweb" bg={true} />
+          <ParticlesBg type="cobweb" bg={true} bg={config} />
           <h1 className={styles.title}>Welcome to my page</h1>
           <h2>I'm a developer, runner, traveler.</h2>
         </section>

@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 250vh;
   width: 100%;
   background-color: black;
 }
@@ -25,4 +25,31 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  align-items: stretch;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.experiencelist {
+  margin-block-start: 0;
+  padding-inline-start: 0;
+}
+
+.experienceinfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience span{
+  line-height: 1.5;
+}
+
+.logo{
+  margin-left: 16px;
+  background-color: white;
+}
+
+.title {
+  font-size: 20px;
 }
