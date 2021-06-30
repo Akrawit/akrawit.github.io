@@ -27,9 +27,9 @@ export default function Header() {
         <link rel="icon" href="/favicon.ico" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta httpEquiv = "content-language" content = "en"/>
-        <meta name="description" content="This is my resume website. Build this for practicing my skill." />
+        <meta name="description" content="Akrawit Suwansantisuk - This is my resume website. Build this for practicing my skill." />
         <meta property="og:title" content="Akrawit Suwansantisuk - Resume" />
-        <meta property="og:description" content="This is my resume website. Build this for practicing my skill." />
+        <meta property="og:description" content="Akrawit Suwansantisuk - This is my resume website. Build this for practicing my skill." />
         <meta property="og:url" content="https://akrawit.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/profile.png" />
@@ -48,6 +48,7 @@ export default function Header() {
         <section className={styles.firstSection} >
           <ParticlesBg type="cobweb" bg={true} bg={config} />
           <h1 className={styles.title}>AKRAWIT</h1>
+          <h1 className={styles.title}>SUWANSANTISUK</h1>
           <img src="/profile.jpg" alt="profile-image" className={styles.profile} />
           <h2 className={styles.description}>I'm a developer, runner, traveler.</h2>
           <div className={styles.socialMedias}>
