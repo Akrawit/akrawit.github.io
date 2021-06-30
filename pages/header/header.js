@@ -26,9 +26,10 @@ export default function Header() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content="This is my resume website. Build this for fun." />
+        <meta httpEquiv = "content-language" content = "en"/>
+        <meta name="description" content="This is my resume website. Build this for practicing my skill." />
         <meta property="og:title" content="Akrawit Suwansantisuk - Resume" />
-        <meta property="og:description" content="This is my resume website. Build this for fun." />
+        <meta property="og:description" content="This is my resume website. Build this for practicing my skill." />
         <meta property="og:url" content="https://akrawit.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/profile.png" />
