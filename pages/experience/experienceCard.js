@@ -13,7 +13,6 @@ export default function ExperienceCard(props) {
                 <span>{props.period}</span>
                 <span>{props.company}</span>
             </div>
-
         </li>
     )
 };
