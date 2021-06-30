@@ -70,6 +70,6 @@
 
 @media screen and (max-device-width: 480px) and (orientation: portrait){
   .firstSection h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
