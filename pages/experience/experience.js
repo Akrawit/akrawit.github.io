@@ -44,6 +44,29 @@ export default function Experience() {
           </ul>
         </div>
       </Slide>
+      <Slide right>
+        <div>
+          <h2> Education </h2>
+          <ul className={styles.experiencelist}>
+            <ExperienceCard
+              title="Computer Engineering"
+              period="2008 - 2012"
+              company="KMUTT"
+              url="https://www.linkedin.com/school/kmutt/"
+              imageSource="/kmutt.png"
+              alt="kmutt-logo"
+            />
+            <ExperienceCard
+              title="Student"
+              period="2002 - 2008"
+              company="MATHAYOMWATSING SCHOOL"
+              url="https://www.mws.ac.th/"
+              imageSource="/mws.jpg"
+              alt="mws-logo"
+            />
+          </ul>
+        </div>
+      </Slide>
     </section>
   )
 }
