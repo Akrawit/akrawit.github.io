@@ -27,6 +27,10 @@ export default function Header() {
         <link rel="icon" href="/favicon.ico" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="description" content="This is my resume website. Build this for fun." />
+        <meta property="og:title" content="Akrawit Suwansantisuk - Resume" />
+        <meta property="og:description" content="This is my resume website. Build this for fun." />
+        <meta property="og:url" content="https://akrawit.com/" />
+        <meta property="og:type" content="website" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet" />
@@ -38,8 +42,8 @@ export default function Header() {
           <img src="/profile.jpg" alt="profile-image" className={styles.profile} />
           <h2 className={styles.description}>I'm a developer, runner, traveler.</h2>
           <div className={styles.socialMedias}>
-            <SocialMedia socialMedia="https://www.linkedin.com/in/akrawit/" iconType={faLinkedin}/>
-            <SocialMedia socialMedia="https://github.com/Akrawit" iconType={faGithub}/>
+            <SocialMedia socialMedia="https://www.linkedin.com/in/akrawit/" iconType={faLinkedin} />
+            <SocialMedia socialMedia="https://github.com/Akrawit" iconType={faGithub} />
           </div>
         </section>
       </main>
