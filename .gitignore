@@ -58,7 +58,6 @@ typings/
 
 # gatsby files
 .cache/
-public
 .next/
 
 # Mac files
