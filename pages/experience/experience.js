@@ -7,7 +7,7 @@ export default function Experience() {
     <section className={styles.second}>
       <Slide left>
         <div>
-          <h3> Experience </h3>
+          <h2> Experience </h2>
           <ul className={styles.experiencelist}>
             <ExperienceCard
               title="Software Engineer"

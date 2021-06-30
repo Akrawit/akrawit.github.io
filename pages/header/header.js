@@ -26,7 +26,8 @@ export default function Header() {
       <main className={styles.main}>
         <section className={styles.firstSection} >
           <ParticlesBg type="cobweb" bg={true} bg={config} />
-          <h1 className={styles.title}>Welcome to my page</h1>
+          <h1 className={styles.title}>AKRAWIT</h1>
+          <img src="/profile.jpg" alt="profile-image" className={styles.profile} />
           <h2>I'm a developer, runner, traveler.</h2>
         </section>
       </main>
