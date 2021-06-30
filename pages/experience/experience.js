@@ -1,8 +1,6 @@
 import styles from "../../styles/Experience.module.css"
 import Slide from 'react-reveal/Slide';
-import Image from 'next/image'
-import ExperienceCard from "./ExperienceCard";
-
+import ExperienceCard from "./experienceCard";
 
 export default function Experience() {
   return (
@@ -32,7 +30,7 @@ export default function Experience() {
               period="2012 - 2014"
               company="CDG systems"
               url="https://www.linkedin.com/company/cdg-systems-cdgs-/"
-              imageSource="/CDGS.png"
+              imageSource="/cdgs.png"
               alt="cdgs-logo"
             />
             <ExperienceCard
@@ -40,7 +38,7 @@ export default function Experience() {
               period="2010"
               company="Universiti Teknologi Malaysia"
               url="https://www.linkedin.com/school/universiti-teknologi-malaysia/"
-              imageSource="/UTM.png"
+              imageSource="/utm.png"
               alt="utm-logo"
             />
           </ul>
