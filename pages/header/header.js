@@ -31,9 +31,17 @@ export default function Header() {
         <meta property="og:description" content="This is my resume website. Build this for fun." />
         <meta property="og:url" content="https://akrawit.com/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="/profile.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EP6P4GQ5S"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9EP6P4GQ5S');`}}>
+        </script>
       </Head>
       <main className={styles.main}>
         <section className={styles.firstSection} >
