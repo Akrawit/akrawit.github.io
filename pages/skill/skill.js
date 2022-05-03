@@ -6,12 +6,12 @@ export default function Skill() {
     <section className={styles.skill}>
       <h2>Skills</h2>
       <ul>
-        <SkillCircular skillValue={7/10} label="C#"/>
-        <SkillCircular skillValue={5/10} label="JS"/>
+        <SkillCircular skillValue={8/10} label="C#"/>
+        <SkillCircular skillValue={7/10} label="Java"/>
+        <SkillCircular skillValue={6/10} label="JS"/>
         <SkillCircular skillValue={6/10} label="HTML/CSS"/>
-        <SkillCircular skillValue={6/10} label="Java"/>
-        <SkillCircular skillValue={4/10} label="Typescript"/>
         <SkillCircular skillValue={5/10} label="SQL"/>
+        <SkillCircular skillValue={5/10} label="Typescript"/>
       </ul>
     </section>
   )
