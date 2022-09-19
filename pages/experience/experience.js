@@ -10,7 +10,7 @@ export default function Experience() {
           <h2> Experience </h2>
           <ul className={styles.experiencelist}>
             <ExperienceCard
-              title="Software Engineer"
+              title="Senior Software Engineer"
               period="2017 - present"
               company="Agoda Services"
               url="https://www.linkedin.com/company/agoda"
