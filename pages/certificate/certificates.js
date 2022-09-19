@@ -8,7 +8,7 @@ export default function Certificate() {
         <li>
           <h3>Completed</h3>
           <ul>
-            <li>
+            <li className="cer">
               <img src="/cer1.png"/>
             </li>
           </ul>

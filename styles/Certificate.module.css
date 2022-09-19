@@ -9,6 +9,7 @@
 
 .certificate li {
   list-style-type: none;
+  max-width: 100%;
 }
 
 .certificate ul {
@@ -20,6 +21,10 @@
   align-items: center;
   max-width: 100%;
   flex-flow: wrap;
+}
+
+.certificate li img{
+  max-width: 100%;
 }
 
 @media screen and (max-device-width: 480px){
