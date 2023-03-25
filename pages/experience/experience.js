@@ -28,7 +28,7 @@ export default function Experience() {
             <ExperienceCard
               title="Java developer"
               period="2012 - 2014"
-              company="CDG systems"
+              company="CDG Systems"
               url="https://www.linkedin.com/company/cdg-systems-cdgs-/"
               imageSource="/CDGS.png"
               alt="cdgs-logo"
