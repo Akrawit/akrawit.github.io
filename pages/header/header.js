@@ -1,24 +1,24 @@
-import Head from "../../node_modules/next/head"
-import dynamic from "../../node_modules/next/dynamic"
-import styles from "../../styles/Header.module.css"
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import Head from "../../node_modules/next/head";
+import dynamic from "../../node_modules/next/dynamic";
+import styles from "../../styles/Header.module.css";
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import SocialMedia from "./socialMedia";
 
 const ParticlesBg = dynamic(
   () => {
-    return import("particles-bg")
+    return import("particles-bg");
   },
   { ssr: false }
-)
+);
 
 export default function Header() {
-  let config = {
+  const particleConfig = {
     position: "absolute",
     zIndex: -1,
     top: 0,
     left: 0,
     opacity: 0.2,
-  }
+  };
   return (
     <header id="head" className={styles.main} >
       <Head>
@@ -27,9 +27,9 @@ export default function Header() {
         <link rel="icon" href="/favicon.ico" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta httpEquiv = "content-language" content = "en"/>
-        <meta name="description" content="Akrawit Suwansantisuk - This is my resume website. Build this for practicing my skill." />
+        <meta name="description" content="This is my resume website built for practicing my skills." />
         <meta property="og:title" content="Akrawit Suwansantisuk - Resume" />
-        <meta property="og:description" content="Akrawit Suwansantisuk - This is my resume website. Build this for practicing my skill." />
+        <meta property="og:description" content="This is my resume website built for practicing my skills." />
         <meta property="og:url" content="https://akrawit.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/profile.png" />
@@ -46,11 +46,11 @@ export default function Header() {
       </Head>
       <main className={styles.main}>
         <section className={styles.firstSection} >
-          <ParticlesBg type="cobweb" bg={true} bg={config} />
+          <ParticlesBg type="cobweb" bg={true} bg={particleConfig} />
           <h1 className={styles.title}>AKRAWIT</h1>
           <h1 className={styles.title}>SUWANSANTISUK</h1>
           <img src="/profile.jpg" alt="profile-image" className={styles.profile} />
-          <h2 className={styles.description}>I'm a developer, runner, traveler.</h2>
+          <h2 className={styles.description}>I am a developer, runner, and traveler.</h2>
           <div className={styles.socialMedias}>
             <SocialMedia socialMedia="https://www.linkedin.com/in/akrawit/" iconType={faLinkedin} />
             <SocialMedia socialMedia="https://github.com/Akrawit" iconType={faGithub} />
@@ -60,5 +60,3 @@ export default function Header() {
     </header>
   );
 }
-
-
