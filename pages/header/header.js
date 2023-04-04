@@ -46,7 +46,7 @@ export default function Header() {
       </Head>
       <main className={styles.main}>
         <section className={styles.firstSection} >
-          <ParticlesBg type="cobweb" bg={true} bg={particleConfig} />
+          <ParticlesBg type="cobweb" bg={particleConfig} />
           <h1 className={styles.title}>AKRAWIT</h1>
           <h1 className={styles.title}>SUWANSANTISUK</h1>
           <img src="/profile.jpg" alt="profile-image" className={styles.profile} />
