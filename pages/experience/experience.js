@@ -1,10 +1,9 @@
 import styles from "../../styles/Experience.module.css";
-import Slide from 'react-reveal/Slide';
 import ExperienceCard from "./experienceCard";
 
 const experienceData = [
   {
-    title: "Senior Software Engineer",
+    title: "Staff Software Engineer",
     period: "2017 - present",
     company: "Agoda Services",
     url: "https://www.linkedin.com/company/agoda",
@@ -59,42 +58,38 @@ const educationData = [
 export default function Experience() {
   return (
     <section className={styles.second}>
-      <Slide left>
-        <div>
-          <h2>Experience</h2>
-          <ul className={styles.experiencelist}>
-            {experienceData.map((data, index) => (
-              <ExperienceCard
-                key={index}
-                title={data.title}
-                period={data.period}
-                company={data.company}
-                url={data.url}
-                imageSource={data.imageSource}
-                alt={data.alt}
-              />
-            ))}
-          </ul>
-        </div>
-      </Slide>
-      <Slide right>
-        <div>
-          <h2>Education</h2>
-          <ul className={styles.experiencelist}>
-            {educationData.map((data, index) => (
-              <ExperienceCard
-                key={index}
-                title={data.title}
-                period={data.period}
-                company={data.company}
-                url={data.url}
-                imageSource={data.imageSource}
-                alt={data.alt}
-              />
-            ))}
-          </ul>
-        </div>
-      </Slide>
+      <div>
+        <h2>Experience</h2>
+        <ul className={styles.experiencelist}>
+          {experienceData.map((data, index) => (
+            <ExperienceCard
+              key={index}
+              title={data.title}
+              period={data.period}
+              company={data.company}
+              url={data.url}
+              imageSource={data.imageSource}
+              alt={data.alt}
+            />
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>Education</h2>
+        <ul className={styles.experiencelist}>
+          {educationData.map((data, index) => (
+            <ExperienceCard
+              key={index}
+              title={data.title}
+              period={data.period}
+              company={data.company}
+              url={data.url}
+              imageSource={data.imageSource}
+              alt={data.alt}
+            />
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

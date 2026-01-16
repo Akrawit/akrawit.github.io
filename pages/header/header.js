@@ -33,9 +33,6 @@ export default function Header() {
         <meta property="og:url" content="https://akrawit.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/profile.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap" rel="stylesheet" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-9EP6P4GQ5S"></script>
         <script dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || [];
@@ -45,12 +42,12 @@ export default function Header() {
         </script>
       </Head>
       <main className={styles.main}>
-        <section className={styles.firstSection} >
+        <section className={styles.firstSection}>
           <ParticlesBg type="cobweb" bg={particleConfig} />
           <h1 className={styles.title}>AKRAWIT</h1>
           <h1 className={styles.title}>SUWANSANTISUK</h1>
-          <img src="/profile.jpg" alt="profile-image" className={styles.profile} />
-          <h2 className={styles.description}>I am a developer, runner, and traveler.</h2>
+          <img src="/profile.jpg" alt="Akrawit Suwansantisuk - Profile" className={styles.profile} />
+          <h2 className={styles.description}>Staff Software Engineer passionate about building innovative solutions. I balance my professional pursuits with marathon running and exploring new destinations around the world.</h2>
           <div className={styles.socialMedias}>
             <SocialMedia socialMedia="https://www.linkedin.com/in/akrawit/" iconType={faLinkedin} />
             <SocialMedia socialMedia="https://github.com/Akrawit" iconType={faGithub} />
