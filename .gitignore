@@ -60,6 +60,9 @@ typings/
 .cache/
 .next/
 
+# Next.js build output (intermediate)
+out/
+
 # Mac files
 .DS_Store
 
