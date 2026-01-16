@@ -1,6 +1,8 @@
 module.exports = {
+    output: 'export',
     images: {
-      loader: 'imgix',
-      path: 'https://akrawit.com/public/',
+      unoptimized: true,
     },
+    assetPrefix: process.env.NODE_ENV === 'production' ? '' : '',
+    basePath: '',
   }
