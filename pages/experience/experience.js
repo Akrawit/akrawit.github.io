@@ -23,7 +23,7 @@ const experienceData = [
     period: "2012 - 2014",
     company: "CDG Systems",
     url: "https://www.linkedin.com/company/cdg-systems-cdgs-/",
-    imageSource: "/CDGS.png",
+    imageSource: "/cdgs.png",
     alt: "cdgs-logo"
   },
   {
@@ -31,7 +31,7 @@ const experienceData = [
     period: "2010",
     company: "Universiti Teknologi Malaysia",
     url: "https://www.linkedin.com/school/universiti-teknologi-malaysia/",
-    imageSource: "/UTM.png",
+    imageSource: "/utm.png",
     alt: "utm-logo"
   }
 ];
