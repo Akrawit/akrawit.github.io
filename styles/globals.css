@@ -1,22 +1,26 @@
 :root {
-  /* Modern Color Palette 2026 */
-  --color-primary: #6366f1;
-  --color-primary-dark: #4f46e5;
-  --color-secondary: #8b5cf6;
-  --color-accent: #ec4899;
-  --color-dark: #0f172a;
-  --color-dark-light: #1e293b;
-  --color-light: #f8fafc;
+  /* Agoda Color Palette */
+  --color-primary: #257DC0;
+  --color-primary-dark: #1e6ba8;
+  --color-primary-light: #4a9dd8;
+  --color-accent-yellow: #F59D1A;
+  --color-accent-red: #E52021;
+  --color-accent-green: #2BAA5D;
+  --color-accent-purple: #704897;
+  --color-dark: #2c3e50;
+  --color-dark-light: #34495e;
+  --color-light: #f5f7fa;
   --color-white: #ffffff;
-  --color-text: #1e293b;
-  --color-text-light: #64748b;
-  --color-border: rgba(148, 163, 184, 0.2);
+  --color-text: #2c3e50;
+  --color-text-light: #919191;
+  --color-text-muted: #b0b0b0;
+  --color-border: rgba(37, 125, 192, 0.15);
+  --color-border-light: rgba(0, 0, 0, 0.08);
   
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
+  /* Agoda Gradients */
+  --gradient-primary: linear-gradient(135deg, #257DC0 0%, #1e6ba8 100%);
+  --gradient-accent: linear-gradient(135deg, #F59D1A 0%, #E52021 50%, #2BAA5D 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(37, 125, 192, 0.05) 0%, rgba(245, 157, 26, 0.05) 100%);
   
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -58,8 +62,8 @@ html {
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background: var(--color-dark);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,7 +98,7 @@ img {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-dark);
+  background: var(--color-light);
 }
 
 ::-webkit-scrollbar-thumb {

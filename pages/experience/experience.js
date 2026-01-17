@@ -4,7 +4,23 @@ import ExperienceCard from "./experienceCard";
 const experienceData = [
   {
     title: "Staff Software Engineer",
-    period: "2017 - present",
+    period: "Mar 2024 - Present",
+    company: "Agoda Services",
+    url: "https://www.linkedin.com/company/agoda",
+    imageSource: "/agoda.png",
+    alt: "agoda-logo"
+  },
+  {
+    title: "Senior Software Engineer",
+    period: "Aug 2021 - Feb 2024",
+    company: "Agoda Services",
+    url: "https://www.linkedin.com/company/agoda",
+    imageSource: "/agoda.png",
+    alt: "agoda-logo"
+  },
+  {
+    title: "Software Engineer",
+    period: "Aug 2016 - Jul 2021",
     company: "Agoda Services",
     url: "https://www.linkedin.com/company/agoda",
     imageSource: "/agoda.png",
@@ -12,23 +28,23 @@ const experienceData = [
   },
   {
     title: "Full Stack Developer",
-    period: "2015 - 2017",
-    company: "Wongnai Media",
+    period: "Feb 2015 - May 2016",
+    company: "Wongnai.com",
     url: "https://www.linkedin.com/company/wongnai.com/",
     imageSource: "/wongnai.png",
     alt: "wongnai-logo"
   },
   {
-    title: "Java developer",
-    period: "2012 - 2014",
+    title: "Java Programmer",
+    period: "May 2012 - Jul 2014",
     company: "CDG Systems",
     url: "https://www.linkedin.com/company/cdg-systems-cdgs-/",
     imageSource: "/cdgs.png",
     alt: "cdgs-logo"
   },
   {
-    title: "Intern",
-    period: "2010",
+    title: "Practical Training Student",
+    period: "Apr 2011 - May 2011",
     company: "Universiti Teknologi Malaysia",
     url: "https://www.linkedin.com/school/universiti-teknologi-malaysia/",
     imageSource: "/utm.png",
