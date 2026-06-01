@@ -8,7 +8,8 @@ const experienceData = [
     company: "Agoda Services",
     url: "https://www.linkedin.com/company/agoda",
     imageSource: "/agoda.png",
-    alt: "agoda-logo"
+    alt: "agoda-logo",
+    flavor: "Apex-tier species. Architects distributed systems and mentors junior Engineermon."
   },
   {
     title: "Senior Software Engineer",
@@ -16,7 +17,8 @@ const experienceData = [
     company: "Agoda Services",
     url: "https://www.linkedin.com/company/agoda",
     imageSource: "/agoda.png",
-    alt: "agoda-logo"
+    alt: "agoda-logo",
+    flavor: "Evolved form. Known for building high-throughput backend solutions at speed."
   },
   {
     title: "Software Engineer",
@@ -24,7 +26,8 @@ const experienceData = [
     company: "Agoda Services",
     url: "https://www.linkedin.com/company/agoda",
     imageSource: "/agoda.png",
-    alt: "agoda-logo"
+    alt: "agoda-logo",
+    flavor: "Base form. First encountered deep in Agoda's vast server caverns."
   },
   {
     title: "Full Stack Developer",
@@ -32,7 +35,8 @@ const experienceData = [
     company: "Wongnai.com",
     url: "https://www.linkedin.com/company/wongnai.com/",
     imageSource: "/wongnai.png",
-    alt: "wongnai-logo"
+    alt: "wongnai-logo",
+    flavor: "A versatile species. Roams freely between frontend and backend territories."
   },
   {
     title: "Java Programmer",
@@ -40,7 +44,8 @@ const experienceData = [
     company: "CDG Systems",
     url: "https://www.linkedin.com/company/cdg-systems-cdgs-/",
     imageSource: "/cdgs.png",
-    alt: "cdgs-logo"
+    alt: "cdgs-logo",
+    flavor: "Early encounter. Specializes in Java-type moves and enterprise patterns."
   },
   {
     title: "Practical Training Student",
@@ -48,7 +53,8 @@ const experienceData = [
     company: "Universiti Teknologi Malaysia",
     url: "https://www.linkedin.com/school/universiti-teknologi-malaysia/",
     imageSource: "/utm.png",
-    alt: "utm-logo"
+    alt: "utm-logo",
+    flavor: "Rookie stage. Where skills were first put to the real-world test."
   }
 ];
 
@@ -59,7 +65,8 @@ const educationData = [
     company: "KMUTT",
     url: "https://www.linkedin.com/school/kmutt/",
     imageSource: "/kmutt.png",
-    alt: "kmutt-logo"
+    alt: "kmutt-logo",
+    flavor: "Origin story. The place where the Engineermon journey first began."
   },
   {
     title: "Student",
@@ -67,45 +74,33 @@ const educationData = [
     company: "MATHAYOMWATSING SCHOOL",
     url: "https://www.mws.ac.th/",
     imageSource: "/mws.jpg",
-    alt: "mws-logo"
+    alt: "mws-logo",
+    flavor: "Pre-evolution era. Before the coding journey had even started."
   }
 ];
 
 export default function Experience() {
   return (
-    <section className={styles.second}>
-      <div>
-        <h2>Experience</h2>
-        <ul className={styles.experiencelist}>
-          {experienceData.map((data, index) => (
-            <ExperienceCard
-              key={index}
-              title={data.title}
-              period={data.period}
-              company={data.company}
-              url={data.url}
-              imageSource={data.imageSource}
-              alt={data.alt}
-            />
-          ))}
-        </ul>
+    <section id="experience" className={styles.second}>
+      <div className={styles.sectionHeader}>
+        <span>EXPERIENCE</span>
+        <span>SEEN: {experienceData.length}</span>
       </div>
-      <div>
-        <h2>Education</h2>
-        <ul className={styles.experiencelist}>
-          {educationData.map((data, index) => (
-            <ExperienceCard
-              key={index}
-              title={data.title}
-              period={data.period}
-              company={data.company}
-              url={data.url}
-              imageSource={data.imageSource}
-              alt={data.alt}
-            />
-          ))}
-        </ul>
+      <ul className={styles.experiencelist}>
+        {experienceData.map((data, index) => (
+          <ExperienceCard key={index} index={index} isEdu={false} {...data} />
+        ))}
+      </ul>
+
+      <div className={`${styles.sectionHeader} ${styles.sectionHeaderEdu}`}>
+        <span>EDUCATION</span>
+        <span>SEEN: {educationData.length}</span>
       </div>
+      <ul className={styles.experiencelist}>
+        {educationData.map((data, index) => (
+          <ExperienceCard key={index} index={index} isEdu={true} {...data} />
+        ))}
+      </ul>
     </section>
   );
 }
