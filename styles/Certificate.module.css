@@ -9,7 +9,7 @@
 .hofHeader {
   background: var(--poke-gold);
   color: var(--poke-white);
-  font-size: 9px;
+  font-size: 15px;
   padding: 8px 14px;
   border: 2px solid var(--poke-gold-light);
   text-align: center;
@@ -21,7 +21,7 @@
 }
 
 .hofStars {
-  font-size: 14px;
+  font-size: 24px;
   color: var(--poke-gold-light);
   text-align: center;
   margin-bottom: 12px;
@@ -54,15 +54,43 @@
   flex-shrink: 0;
   background: #1a1a1a;
   image-rendering: pixelated;
+  cursor: zoom-in;
 }
 
 .hofCertName {
-  font-size: 7px;
+  font-size: 12px;
   color: var(--poke-gold-light);
   margin-bottom: 6px;
 }
 
+.hofCertDesc {
+  font-size: 9px;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+
 .hofCertStatus {
-  font-size: 6px;
+  font-size: 11px;
   color: #aaa;
+}
+
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: zoom-out;
+}
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 3px solid var(--poke-gold-light);
+  box-shadow: 0 0 40px var(--poke-gold);
+  image-rendering: auto;
 }
