@@ -11,6 +11,7 @@ const BAR_COLORS = {
 };
 
 export default function SkillItem({ skillValue, label }) {
+  if (!label) return null;
   const pct = Math.round(skillValue * 100);
   const barClass = BAR_COLORS[label] || styles.barCsharp;
 

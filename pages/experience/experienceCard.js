@@ -1,6 +1,7 @@
 import styles from "../../styles/Experience.module.css";
 
 export default function ExperienceCard({ title, period, company, imageSource, alt, flavor, index, isEdu, url: _url }) {
+  if (!period) return null;
   const num = isEdu
     ? `#E${String(index + 1).padStart(2, '0')}`
     : `#${String(index + 1).padStart(3, '0')}`;
