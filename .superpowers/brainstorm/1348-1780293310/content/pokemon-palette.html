@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon Palette</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#1a1a2e; font-family:'Press Start 2P','Courier New',monospace; color:#fff; padding:24px; }
+  h1 { font-size:12px; color:#ffd700; text-align:center; margin-bottom:6px; }
+  .sub { font-size:7px; color:#aaa; text-align:center; margin-bottom:28px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:860px; margin:0 auto; }
+
+  .pcard { border:3px solid #444; border-radius:3px; cursor:pointer; transition:border-color .15s,transform .15s; overflow:hidden; }
+  .pcard:hover { border-color:#ffd700; transform:translateY(-2px); }
+  .pcard.selected { border-color:#ffd700; box-shadow:0 0 0 2px #ffd700; }
+  .pcard-label { background:#222; padding:8px 12px; font-size:7px; color:#ffd700; border-bottom:2px solid #444; }
+  .pcard-desc { padding:9px 12px; font-size:6px; color:#aaa; line-height:1.9; border-top:2px solid #333; }
+
+  /* ── FireRed / LeafGreen ── */
+  .fr { background:#f5e8d0; padding:10px; }
+  .fr-bar { background:#cc2200; color:#fff; font-size:7px; padding:5px 10px; margin-bottom:8px; display:flex; justify-content:space-between; }
+  .fr-card { background:#fff; border:3px solid #000; padding:8px; display:flex; gap:10px; margin-bottom:8px; }
+  .fr-sprite { font-size:34px; }
+  .fr-info { flex:1; }
+  .fr-name { font-size:9px; color:#000; margin-bottom:3px; }
+  .fr-id { font-size:6px; color:#666; margin-bottom:6px; }
+  .fr-badges { display:flex; gap:4px; }
+  .fr-badge { background:#cc2200; color:#fff; font-size:6px; padding:2px 5px; }
+  .fr-menu { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+  .fr-btn { background:#cc2200; color:#fff; font-size:6px; padding:5px; border:2px solid #000; text-align:center; }
+  .fr-btn.alt { background:#336600; }
+
+  /* ── Gold / Silver ── */
+  .gs { background:#e8d890; padding:10px; }
+  .gs-bar { background:#8b6914; color:#ffd700; font-size:7px; padding:5px 10px; margin-bottom:8px; display:flex; justify-content:space-between; }
+  .gs-card { background:#fff8dc; border:3px solid #8b6914; padding:8px; display:flex; gap:10px; margin-bottom:8px; }
+  .gs-sprite { font-size:34px; }
+  .gs-info { flex:1; }
+  .gs-name { font-size:9px; color:#5c3d00; margin-bottom:3px; }
+  .gs-id { font-size:6px; color:#8b6914; margin-bottom:6px; }
+  .gs-badges { display:flex; gap:4px; }
+  .gs-badge { background:#8b6914; color:#ffd700; font-size:6px; padding:2px 5px; }
+  .gs-menu { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+  .gs-btn { background:#8b6914; color:#ffd700; font-size:6px; padding:5px; border:2px solid #5c3d00; text-align:center; }
+  .gs-btn.alt { background:#336644; color:#90ee90; }
+
+  /* ── Ruby / Sapphire ── */
+  .rs { background:#d0e8f8; padding:10px; }
+  .rs-bar { background:#1a3a8c; color:#fff; font-size:7px; padding:5px 10px; margin-bottom:8px; display:flex; justify-content:space-between; }
+  .rs-card { background:#fff; border:3px solid #1a3a8c; padding:8px; display:flex; gap:10px; margin-bottom:8px; }
+  .rs-sprite { font-size:34px; }
+  .rs-info { flex:1; }
+  .rs-name { font-size:9px; color:#1a3a8c; margin-bottom:3px; }
+  .rs-id { font-size:6px; color:#4a6aac; margin-bottom:6px; }
+  .rs-badges { display:flex; gap:4px; }
+  .rs-badge { background:#1a3a8c; color:#fff; font-size:6px; padding:2px 5px; }
+  .rs-badge.red { background:#cc2200; }
+  .rs-menu { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+  .rs-btn { background:#1a3a8c; color:#fff; font-size:6px; padding:5px; border:2px solid #000; text-align:center; }
+  .rs-btn.alt { background:#cc2200; }
+
+  /* ── HeartGold / Dark Mode ── */
+  .hg { background:#2a1a3e; padding:10px; }
+  .hg-bar { background:#6a2a9e; color:#ffd700; font-size:7px; padding:5px 10px; margin-bottom:8px; display:flex; justify-content:space-between; }
+  .hg-card { background:#1a0a2e; border:3px solid #6a2a9e; padding:8px; display:flex; gap:10px; margin-bottom:8px; }
+  .hg-sprite { font-size:34px; }
+  .hg-info { flex:1; }
+  .hg-name { font-size:9px; color:#ffd700; margin-bottom:3px; }
+  .hg-id { font-size:6px; color:#a070d0; margin-bottom:6px; }
+  .hg-badges { display:flex; gap:4px; }
+  .hg-badge { background:#6a2a9e; color:#ffd700; font-size:6px; padding:2px 5px; }
+  .hg-badge.gold { background:#b8860b; }
+  .hg-menu { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+  .hg-btn { background:#6a2a9e; color:#ffd700; font-size:6px; padding:5px; border:2px solid #9050c0; text-align:center; }
+  .hg-btn.alt { background:#b8860b; color:#fff; }
+
+  .pcard.selected .pcard-label::after { content:' ✓'; color:#ffd700; }
+</style>
+<script>
+  function pick(el) {
+    document.querySelectorAll('.pcard').forEach(c=>c.classList.remove('selected'));
+    el.classList.add('selected');
+    const choice = el.dataset.choice;
+    const text = el.querySelector('.pcard-label').textContent.trim();
+    try { fetch('/__select',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({choice,text,timestamp:Date.now()})}).catch(()=>{}); } catch(e){}
+    if(window.recordSelection) window.recordSelection(choice, text);
+  }
+</script>
+</head>
+<body>
+
+<h1>Pick a color palette</h1>
+<p class="sub">Same Trainer Card layout — different game generation feel</p>
+
+<div class="grid">
+
+  <!-- FireRed -->
+  <div class="pcard" data-choice="firered" onclick="pick(this)">
+    <div class="pcard-label">A · FireRed / LeafGreen (Gen 3)</div>
+    <div class="fr">
+      <div class="fr-bar"><span>TRAINER CARD</span><span>ID NO. 00001</span></div>
+      <div class="fr-card">
+        <div class="fr-sprite">🧑‍💻</div>
+        <div class="fr-info">
+          <div class="fr-name">AKRAWIT</div>
+          <div class="fr-id">STAFF ENG · LVL 99</div>
+          <div class="fr-badges">
+            <span class="fr-badge">C#</span>
+            <span class="fr-badge">JAVA</span>
+            <span class="fr-badge">JS</span>
+          </div>
+        </div>
+      </div>
+      <div class="fr-menu">
+        <div class="fr-btn">▶ RESUME</div>
+        <div class="fr-btn alt">SKILLS</div>
+        <div class="fr-btn alt">WORK EXP</div>
+        <div class="fr-btn">CERTS</div>
+      </div>
+    </div>
+    <div class="pcard-desc">Warm cream + bold red. Classic, inviting. The most recognizable Pokemon look.</div>
+  </div>
+
+  <!-- Gold/Silver -->
+  <div class="pcard" data-choice="goldsilver" onclick="pick(this)">
+    <div class="pcard-label">B · Gold / Silver (Gen 2)</div>
+    <div class="gs">
+      <div class="gs-bar"><span>TRAINER CARD</span><span>ID NO. 00001</span></div>
+      <div class="gs-card">
+        <div class="gs-sprite">🧑‍💻</div>
+        <div class="gs-info">
+          <div class="gs-name">AKRAWIT</div>
+          <div class="gs-id">STAFF ENG · LVL 99</div>
+          <div class="gs-badges">
+            <span class="gs-badge">C#</span>
+            <span class="gs-badge">JAVA</span>
+            <span class="gs-badge">JS</span>
+          </div>
+        </div>
+      </div>
+      <div class="gs-menu">
+        <div class="gs-btn">▶ RESUME</div>
+        <div class="gs-btn alt">SKILLS</div>
+        <div class="gs-btn alt">WORK EXP</div>
+        <div class="gs-btn">CERTS</div>
+      </div>
+    </div>
+    <div class="pcard-desc">Gold + earthy brown. Nostalgic and warm. Feels premium and a little adventurous.</div>
+  </div>
+
+  <!-- Ruby/Sapphire -->
+  <div class="pcard" data-choice="rubysapphire" onclick="pick(this)">
+    <div class="pcard-label">C · Ruby / Sapphire (Gen 3)</div>
+    <div class="rs">
+      <div class="rs-bar"><span>TRAINER CARD</span><span>ID NO. 00001</span></div>
+      <div class="rs-card">
+        <div class="rs-sprite">🧑‍💻</div>
+        <div class="rs-info">
+          <div class="rs-name">AKRAWIT</div>
+          <div class="rs-id">STAFF ENG · LVL 99</div>
+          <div class="rs-badges">
+            <span class="rs-badge">C#</span>
+            <span class="rs-badge red">JAVA</span>
+            <span class="rs-badge">JS</span>
+          </div>
+        </div>
+      </div>
+      <div class="rs-menu">
+        <div class="rs-btn">▶ RESUME</div>
+        <div class="rs-btn alt">SKILLS</div>
+        <div class="rs-btn">WORK EXP</div>
+        <div class="rs-btn alt">CERTS</div>
+      </div>
+    </div>
+    <div class="pcard-desc">Deep blue + red accent. Cool and sharp. Great contrast, professional feel.</div>
+  </div>
+
+  <!-- Dark / HeartGold -->
+  <div class="pcard" data-choice="darkpurple" onclick="pick(this)">
+    <div class="pcard-label">D · Dark Mode (Purple / Gold)</div>
+    <div class="hg">
+      <div class="hg-bar"><span>TRAINER CARD</span><span>ID NO. 00001</span></div>
+      <div class="hg-card">
+        <div class="hg-sprite">🧑‍💻</div>
+        <div class="hg-info">
+          <div class="hg-name">AKRAWIT</div>
+          <div class="hg-id">STAFF ENG · LVL 99</div>
+          <div class="hg-badges">
+            <span class="hg-badge">C#</span>
+            <span class="hg-badge gold">JAVA</span>
+            <span class="hg-badge">JS</span>
+          </div>
+        </div>
+      </div>
+      <div class="hg-menu">
+        <div class="hg-btn">▶ RESUME</div>
+        <div class="hg-btn alt">SKILLS</div>
+        <div class="hg-btn">WORK EXP</div>
+        <div class="hg-btn alt">CERTS</div>
+      </div>
+    </div>
+    <div class="pcard-desc">Dark bg + purple + gold. Moody, modern, stands out. Like a shiny Pokemon card.</div>
+  </div>
+
+</div>
+
+<div style="text-align:center;font-size:6px;color:#666;margin-top:20px">Click to select · or mix and match in the terminal</div>
+
+</body>
+</html>

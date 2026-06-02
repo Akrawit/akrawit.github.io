@@ -1,0 +1,174 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - navigation [ref=e5]:
+        - link "ร้านค้า" [ref=e6] [cursor=pointer]:
+          - /url: /shop
+      - link "ELLA" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e8]:
+        - generic [ref=e9]:
+          - button "TH" [ref=e10] [cursor=pointer]
+          - button "EN" [ref=e11] [cursor=pointer]
+        - link [ref=e12] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e13]
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: ELLA Brand Official
+          - heading "Effortless Elegance" [level=1] [ref=e22]
+          - paragraph [ref=e24]: รองเท้าคุณภาพหลักพัน ราคาหลักร้อย — ออกแบบเพื่อสาวไทย
+          - link "ดูคอลเลกชัน" [ref=e25] [cursor=pointer]:
+            - /url: /shop
+        - generic [ref=e28]:
+          - img "Get ready for Summer — ELLA Brand" [ref=e30]
+          - img "ELLA Brand — lifestyle" [ref=e32]
+          - img "DARIN Collection — ELLA Brand" [ref=e34]
+          - button "Previous" [ref=e35] [cursor=pointer]:
+            - img [ref=e36]
+          - button "Next" [ref=e38] [cursor=pointer]:
+            - img [ref=e39]
+          - generic [ref=e41]:
+            - button "Go to slide 1" [ref=e42] [cursor=pointer]
+            - button "Go to slide 2" [ref=e43] [cursor=pointer]
+            - button "Go to slide 3" [ref=e44] [cursor=pointer]
+      - paragraph [ref=e46]: จัดส่งฟรีทั่วประเทศ เมื่อซื้อครบ ฿500 ขึ้นไป
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - img [ref=e50]
+          - generic [ref=e52]: จัดส่งฟรี
+        - generic [ref=e53]:
+          - img [ref=e54]
+          - generic [ref=e56]: คืนสินค้าภายใน 30 วัน
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - generic [ref=e60]: ชำระเงินปลอดภัย
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - heading "คอลเลกชันแนะนำ" [level=2] [ref=e64]
+          - paragraph [ref=e65]: คัดสรรมาเพื่อสาวไทยโดยเฉพาะ — คุณภาพหลักพัน ราคาหลักร้อย
+        - generic [ref=e67]:
+          - link "DAISY DAISY View DAISY ฿799" [ref=e68] [cursor=pointer]:
+            - /url: /product/daisy
+            - generic [ref=e69]:
+              - img "DAISY" [ref=e70]
+              - img "DAISY" [ref=e71]
+              - generic [ref=e72]: View
+            - generic [ref=e73]:
+              - heading "DAISY" [level=3] [ref=e74]
+              - paragraph [ref=e75]: ฿799
+          - link "DARIN DARIN View DARIN ฿899" [ref=e76] [cursor=pointer]:
+            - /url: /product/darin
+            - generic [ref=e77]:
+              - img "DARIN" [ref=e78]
+              - img "DARIN" [ref=e79]
+              - generic [ref=e80]: View
+            - generic [ref=e81]:
+              - heading "DARIN" [level=3] [ref=e82]
+              - paragraph [ref=e83]: ฿899
+          - link "ALICE ALICE View ALICE ฿999" [ref=e84] [cursor=pointer]:
+            - /url: /product/alice
+            - generic [ref=e85]:
+              - img "ALICE" [ref=e86]
+              - img "ALICE" [ref=e87]
+              - generic [ref=e88]: View
+            - generic [ref=e89]:
+              - heading "ALICE" [level=3] [ref=e90]
+              - paragraph [ref=e91]: ฿999
+          - link "ELISA ELISA View ELISA ฿850" [ref=e92] [cursor=pointer]:
+            - /url: /product/elisa
+            - generic [ref=e93]:
+              - img "ELISA" [ref=e94]
+              - img "ELISA" [ref=e95]
+              - generic [ref=e96]: View
+            - generic [ref=e97]:
+              - heading "ELISA" [level=3] [ref=e98]
+              - paragraph [ref=e99]: ฿850
+          - link "BELLE BELLE View BELLE ฿899" [ref=e100] [cursor=pointer]:
+            - /url: /product/belle
+            - generic [ref=e101]:
+              - img "BELLE" [ref=e102]
+              - img "BELLE" [ref=e103]
+              - generic [ref=e104]: View
+            - generic [ref=e105]:
+              - heading "BELLE" [level=3] [ref=e106]
+              - paragraph [ref=e107]: ฿899
+          - link "EMMA EMMA View EMMA ฿850" [ref=e108] [cursor=pointer]:
+            - /url: /product/emma
+            - generic [ref=e109]:
+              - img "EMMA" [ref=e110]
+              - img "EMMA" [ref=e111]
+              - generic [ref=e112]: View
+            - generic [ref=e113]:
+              - heading "EMMA" [level=3] [ref=e114]
+              - paragraph [ref=e115]: ฿850
+          - link "EMMY EMMY View EMMY ฿690" [ref=e116] [cursor=pointer]:
+            - /url: /product/emmy
+            - generic [ref=e117]:
+              - img "EMMY" [ref=e118]
+              - img "EMMY" [ref=e119]
+              - generic [ref=e120]: View
+            - generic [ref=e121]:
+              - heading "EMMY" [level=3] [ref=e122]
+              - paragraph [ref=e123]: ฿690
+          - link "Toffy Collection Toffy Collection View Toffy Collection ฿799" [ref=e124] [cursor=pointer]:
+            - /url: /product/toffy-collection
+            - generic [ref=e125]:
+              - img "Toffy Collection" [ref=e126]
+              - img "Toffy Collection" [ref=e127]
+              - generic [ref=e128]: View
+            - generic [ref=e129]:
+              - heading "Toffy Collection" [level=3] [ref=e130]
+              - paragraph [ref=e131]: ฿799
+        - link "ดูทั้งหมด" [ref=e133] [cursor=pointer]:
+          - /url: /shop
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - heading "@ellabrand.official" [level=2] [ref=e137]
+          - paragraph [ref=e138]: ติดตามเราบน Instagram เพื่อแรงบันดาลใจใหม่ๆ ทุกวัน
+        - generic [ref=e140]:
+          - link "ELLA Style 1" [ref=e141] [cursor=pointer]:
+            - /url: https://www.instagram.com/ellabrand.official/
+            - img "ELLA Style 1" [ref=e142]
+          - link "ELLA Style 2" [ref=e143] [cursor=pointer]:
+            - /url: https://www.instagram.com/ellabrand.official/
+            - img "ELLA Style 2" [ref=e144]
+          - link "ELLA Style 3" [ref=e145] [cursor=pointer]:
+            - /url: https://www.instagram.com/ellabrand.official/
+            - img "ELLA Style 3" [ref=e146]
+          - link "ELLA Style 4" [ref=e147] [cursor=pointer]:
+            - /url: https://www.instagram.com/ellabrand.official/
+            - img "ELLA Style 4" [ref=e148]
+  - contentinfo [ref=e149]:
+    - generic [ref=e150]:
+      - generic [ref=e151]:
+        - generic [ref=e152]:
+          - paragraph [ref=e153]: ELLA
+          - paragraph [ref=e154]: รองเท้าผู้หญิงคุณภาพดี ราคาที่เข้าถึงได้
+          - link "@ellabrand.official" [ref=e155] [cursor=pointer]:
+            - /url: https://www.instagram.com/ellabrand.official/
+        - generic [ref=e156]:
+          - paragraph [ref=e157]: ร้านค้า
+          - list [ref=e158]:
+            - listitem [ref=e159]:
+              - link "สินค้าทั้งหมด" [ref=e160] [cursor=pointer]:
+                - /url: /shop
+        - generic [ref=e161]:
+          - paragraph [ref=e162]: ช่วยเหลือ
+          - list [ref=e163]:
+            - listitem [ref=e164]: จัดส่งฟรี
+            - listitem [ref=e165]: คืนสินค้า 30 วัน
+        - generic [ref=e166]:
+          - paragraph [ref=e167]: ติดต่อ
+          - list [ref=e168]:
+            - listitem [ref=e169]:
+              - link "Shopee" [ref=e170] [cursor=pointer]:
+                - /url: https://shopee.co.th/ellabrand
+            - listitem [ref=e171]:
+              - link "Instagram" [ref=e172] [cursor=pointer]:
+                - /url: https://www.instagram.com/ellabrand.official/
+      - generic [ref=e173]:
+        - paragraph [ref=e174]: © 2026 Ella. All rights reserved.
+        - paragraph [ref=e175]: Bangkok · Thailand

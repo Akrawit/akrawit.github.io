@@ -1,0 +1,140 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: TRAINER CARD
+        - generic [ref=e7]: ID NO. 00001
+      - generic [ref=e8]:
+        - img "Akrawit Suwansantisuk" [ref=e10]
+        - generic [ref=e11]:
+          - generic [ref=e12]: AKRAWIT
+          - generic [ref=e13]:
+            - text: STAFF SOFTWARE
+            - text: ENGINEER
+          - generic [ref=e14]:
+            - generic [ref=e15]: BACKEND
+            - generic [ref=e16]: FULLSTACK
+            - generic [ref=e17]: RUNNER
+          - generic [ref=e18]: "ID: AKRAWIT-S · LVL 99"
+      - navigation [ref=e19]:
+        - link "▶ SKILLS" [ref=e20] [cursor=pointer]:
+          - /url: "#skills"
+        - link "WORK EXP" [ref=e21] [cursor=pointer]:
+          - /url: "#experience"
+        - link "CERTS" [ref=e22] [cursor=pointer]:
+          - /url: "#certificates"
+        - link "CONTACT" [ref=e23] [cursor=pointer]:
+          - /url: "#social"
+      - generic [ref=e24]: Staff SWE passionate about building innovative solutions. Marathon runner. World explorer.▼
+      - generic [ref=e25]:
+        - link "▶ LINKEDIN" [ref=e26] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/akrawit/
+        - link "▶ GITHUB" [ref=e27] [cursor=pointer]:
+          - /url: https://github.com/Akrawit
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - heading "Experience" [level=2] [ref=e30]
+        - list [ref=e31]:
+          - listitem [ref=e32] [cursor=pointer]:
+            - link "agoda-logo" [ref=e34]:
+              - /url: https://www.linkedin.com/company/agoda
+              - img "agoda-logo" [ref=e35]
+            - generic [ref=e36]:
+              - generic [ref=e37]: Staff Software Engineer
+              - generic [ref=e38]: Mar 2024 - Present
+              - generic [ref=e39]: Agoda Services
+          - listitem [ref=e40] [cursor=pointer]:
+            - link "agoda-logo" [ref=e42]:
+              - /url: https://www.linkedin.com/company/agoda
+              - img "agoda-logo" [ref=e43]
+            - generic [ref=e44]:
+              - generic [ref=e45]: Senior Software Engineer
+              - generic [ref=e46]: Aug 2021 - Feb 2024
+              - generic [ref=e47]: Agoda Services
+          - listitem [ref=e48] [cursor=pointer]:
+            - link "agoda-logo" [ref=e50]:
+              - /url: https://www.linkedin.com/company/agoda
+              - img "agoda-logo" [ref=e51]
+            - generic [ref=e52]:
+              - generic [ref=e53]: Software Engineer
+              - generic [ref=e54]: Aug 2016 - Jul 2021
+              - generic [ref=e55]: Agoda Services
+          - listitem [ref=e56] [cursor=pointer]:
+            - link "wongnai-logo" [ref=e58]:
+              - /url: https://www.linkedin.com/company/wongnai.com/
+              - img "wongnai-logo" [ref=e59]
+            - generic [ref=e60]:
+              - generic [ref=e61]: Full Stack Developer
+              - generic [ref=e62]: Feb 2015 - May 2016
+              - generic [ref=e63]: Wongnai.com
+          - listitem [ref=e64] [cursor=pointer]:
+            - link "cdgs-logo" [ref=e66]:
+              - /url: https://www.linkedin.com/company/cdg-systems-cdgs-/
+              - img "cdgs-logo" [ref=e67]
+            - generic [ref=e68]:
+              - generic [ref=e69]: Java Programmer
+              - generic [ref=e70]: May 2012 - Jul 2014
+              - generic [ref=e71]: CDG Systems
+          - listitem [ref=e72] [cursor=pointer]:
+            - link "utm-logo" [ref=e74]:
+              - /url: https://www.linkedin.com/school/universiti-teknologi-malaysia/
+              - img "utm-logo" [ref=e75]
+            - generic [ref=e76]:
+              - generic [ref=e77]: Practical Training Student
+              - generic [ref=e78]: Apr 2011 - May 2011
+              - generic [ref=e79]: Universiti Teknologi Malaysia
+      - generic [ref=e80]:
+        - heading "Education" [level=2] [ref=e81]
+        - list [ref=e82]:
+          - listitem [ref=e83] [cursor=pointer]:
+            - link "kmutt-logo" [ref=e85]:
+              - /url: https://www.linkedin.com/school/kmutt/
+              - img "kmutt-logo" [ref=e86]
+            - generic [ref=e87]:
+              - generic [ref=e88]: Computer Engineering
+              - generic [ref=e89]: 2008 - 2012
+              - generic [ref=e90]: KMUTT
+          - listitem [ref=e91] [cursor=pointer]:
+            - link "mws-logo" [ref=e93]:
+              - /url: https://www.mws.ac.th/
+              - img "mws-logo" [ref=e94]
+            - generic [ref=e95]:
+              - generic [ref=e96]: Student
+              - generic [ref=e97]: 2002 - 2008
+              - generic [ref=e98]: MATHAYOMWATSING SCHOOL
+    - generic [ref=e99]:
+      - heading "Skills" [level=2] [ref=e100]
+      - list [ref=e101]:
+        - listitem [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]: C#
+            - generic [ref=e105]: 80%
+        - listitem [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: Java
+            - generic [ref=e110]: 70%
+        - listitem [ref=e112]:
+          - generic [ref=e113]:
+            - generic [ref=e114]: JavaScript
+            - generic [ref=e115]: 60%
+        - listitem [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]: HTML/CSS
+            - generic [ref=e120]: 60%
+        - listitem [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e124]: SQL
+            - generic [ref=e125]: 50%
+        - listitem [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: TypeScript
+            - generic [ref=e130]: 50%
+    - generic [ref=e132]:
+      - heading "Certificates" [level=2] [ref=e133]
+      - list [ref=e134]:
+        - listitem [ref=e135]:
+          - heading "Completed" [level=3] [ref=e136]
+          - list [ref=e137]:
+            - listitem [ref=e138] [cursor=pointer]:
+              - img [ref=e139]
+  - alert [ref=e140]

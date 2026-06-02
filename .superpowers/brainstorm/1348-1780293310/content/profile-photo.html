@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Photo Treatment</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#1a1a2e; font-family:'Press Start 2P','Courier New',monospace; color:#fff; padding:24px; }
+  h1 { font-size:11px; color:#ffd700; text-align:center; margin-bottom:6px; }
+  .sub { font-size:7px; color:#aaa; text-align:center; margin-bottom:28px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; max-width:860px; margin:0 auto; }
+
+  .pcard { border:3px solid #444; border-radius:3px; cursor:pointer; transition:border-color .15s,transform .15s; overflow:hidden; }
+  .pcard:hover { border-color:#ffd700; transform:translateY(-2px); }
+  .pcard.selected { border-color:#ffd700; box-shadow:0 0 0 2px #ffd700; }
+  .pcard-label { background:#cc2200; color:#fff; font-size:7px; padding:7px 10px; border-bottom:2px solid #aa1100; }
+  .pcard-desc { background:#222; padding:9px 10px; font-size:6px; color:#aaa; line-height:1.9; border-top:2px solid #333; }
+
+  /* Shared trainer card shell */
+  .tc { background:#f5e8d0; padding:10px; }
+  .tc-bar { background:#cc2200; color:#fff; font-size:6px; padding:4px 8px; margin-bottom:8px; display:flex; justify-content:space-between; }
+  .tc-body { background:#fff; border:3px solid #000; padding:8px; display:flex; gap:10px; align-items:flex-start; margin-bottom:8px; }
+  .tc-right { flex:1; }
+  .tc-name { font-size:8px; color:#000; margin-bottom:3px; }
+  .tc-role { font-size:6px; color:#cc2200; margin-bottom:6px; }
+  .tc-badges { display:flex; gap:3px; flex-wrap:wrap; }
+  .tc-badge { background:#cc2200; color:#fff; font-size:5px; padding:2px 5px; }
+  .tc-badge.green { background:#336600; }
+
+  /* A: real photo */
+  .photo-real {
+    width:64px; height:64px; border:2px solid #000; flex-shrink:0;
+    background:#ccc; overflow:hidden; display:flex; align-items:center; justify-content:center;
+    font-size:28px; image-rendering:pixelated;
+  }
+  .photo-real img { width:100%; height:100%; object-fit:cover; }
+
+  /* B: pixelated photo */
+  .photo-pixel {
+    width:64px; height:64px; border:2px solid #000; flex-shrink:0;
+    background:#c8a878; overflow:hidden; display:flex; align-items:center; justify-content:center;
+    image-rendering:pixelated; position:relative;
+  }
+  .pixel-grid {
+    width:100%; height:100%;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+    background-size:8px 8px;
+    position:absolute; top:0; left:0;
+  }
+  .pixel-face { font-size:36px; line-height:1; z-index:1; image-rendering:pixelated; }
+
+  /* C: sprite / silhouette */
+  .photo-sprite {
+    width:64px; height:64px; border:2px solid #000; flex-shrink:0;
+    background:#e8d0b8; display:flex; align-items:center; justify-content:center;
+    font-size:40px; image-rendering:pixelated;
+  }
+
+  .pcard.selected .pcard-label::after { content:' ✓'; color:#ffd700; }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+<script>
+  function pick(el) {
+    document.querySelectorAll('.pcard').forEach(c=>c.classList.remove('selected'));
+    el.classList.add('selected');
+    const choice = el.dataset.choice;
+    const text = el.querySelector('.pcard-label').textContent.trim();
+    try { fetch('/__select',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({choice,text,timestamp:Date.now()})}).catch(()=>{}); } catch(e){}
+    if(window.recordSelection) window.recordSelection(choice, text);
+  }
+</script>
+</head>
+<body>
+
+<h1>Profile photo treatment</h1>
+<p class="sub">How should your photo appear on the Trainer Card?</p>
+
+<div class="grid">
+
+  <!-- A: Real photo, pixel border -->
+  <div class="pcard" data-choice="real-photo" onclick="pick(this)">
+    <div class="pcard-label">A · Real Photo</div>
+    <div class="tc">
+      <div class="tc-bar"><span>TRAINER CARD</span><span>ID 00001</span></div>
+      <div class="tc-body">
+        <div class="photo-real">
+          <span>🧑</span>
+        </div>
+        <div class="tc-right">
+          <div class="tc-name">AKRAWIT</div>
+          <div class="tc-role">STAFF ENG</div>
+          <div class="tc-badges">
+            <span class="tc-badge">C#</span>
+            <span class="tc-badge green">JAVA</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff;border:3px solid #000;padding:5px 8px;font-size:6px;color:#000">
+        ▶ What will AKRAWIT do?
+      </div>
+    </div>
+    <div class="pcard-desc">Your real photo inside a pixel-style border frame. Keeps it personal and professional. Easiest to implement.</div>
+  </div>
+
+  <!-- B: Pixelated / filtered photo -->
+  <div class="pcard" data-choice="pixelated" onclick="pick(this)">
+    <div class="pcard-label">B · Pixelated Photo</div>
+    <div class="tc">
+      <div class="tc-bar"><span>TRAINER CARD</span><span>ID 00001</span></div>
+      <div class="tc-body">
+        <div class="photo-pixel">
+          <div class="pixel-grid"></div>
+          <span class="pixel-face">🧑</span>
+        </div>
+        <div class="tc-right">
+          <div class="tc-name">AKRAWIT</div>
+          <div class="tc-role">STAFF ENG</div>
+          <div class="tc-badges">
+            <span class="tc-badge">C#</span>
+            <span class="tc-badge green">JAVA</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff;border:3px solid #000;padding:5px 8px;font-size:6px;color:#000">
+        ▶ What will AKRAWIT do?
+      </div>
+    </div>
+    <div class="pcard-desc">Real photo with CSS pixel filter applied — looks like a sprite. Best of both worlds. Still recognizable.</div>
+  </div>
+
+  <!-- C: Pokemon-style trainer sprite -->
+  <div class="pcard" data-choice="sprite" onclick="pick(this)">
+    <div class="pcard-label">C · Trainer Sprite</div>
+    <div class="tc">
+      <div class="tc-bar"><span>TRAINER CARD</span><span>ID 00001</span></div>
+      <div class="tc-body">
+        <div class="photo-sprite">🧑‍💻</div>
+        <div class="tc-right">
+          <div class="tc-name">AKRAWIT</div>
+          <div class="tc-role">STAFF ENG</div>
+          <div class="tc-badges">
+            <span class="tc-badge">C#</span>
+            <span class="tc-badge green">JAVA</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#fff;border:3px solid #000;padding:5px 8px;font-size:6px;color:#000">
+        ▶ What will AKRAWIT do?
+      </div>
+    </div>
+    <div class="pcard-desc">A pixel trainer sprite instead of a photo — fully commits to the game aesthetic. Most fun, least personal.</div>
+  </div>
+
+</div>
+
+<div style="text-align:center;font-size:6px;color:#666;margin-top:20px;max-width:860px;margin-left:auto;margin-right:auto">
+  Click to select · Note: option B uses CSS image-rendering and filter effects on your existing photo
+</div>
+
+</body>
+</html>
