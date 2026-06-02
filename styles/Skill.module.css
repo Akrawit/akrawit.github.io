@@ -30,7 +30,7 @@
 }
 
 .statsMonName {
-  font-size: 10px;
+  font-size: 16px;
   color: var(--poke-black);
   margin-bottom: 6px;
 }
@@ -41,7 +41,7 @@
 }
 
 .statsType {
-  font-size: 6px;
+  font-size: 11px;
   padding: 2px 6px;
   border: 1.5px solid var(--poke-black);
   color: var(--poke-white);
@@ -64,9 +64,9 @@
 }
 
 .statLabel {
-  font-size: 6px;
+  font-size: 11px;
   color: var(--poke-black);
-  width: 52px;
+  width: 120px;
   flex-shrink: 0;
   line-height: 1.4;
 }
@@ -88,7 +88,7 @@
 .barTs      { background: var(--bar-ts); }
 
 .statVal {
-  font-size: 6px;
+  font-size: 11px;
   color: var(--poke-black);
   width: 24px;
   text-align: right;

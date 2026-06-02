@@ -9,7 +9,7 @@
 .sectionHeader {
   background: var(--poke-red);
   color: var(--poke-white);
-  font-size: 8px;
+  font-size: 13px;
   padding: 6px 12px;
   border: 2px solid var(--poke-black);
   display: flex;
@@ -43,7 +43,7 @@
 .entryHeader {
   background: var(--poke-red);
   color: var(--poke-white);
-  font-size: 7px;
+  font-size: 12px;
   padding: 4px 8px;
   display: flex;
   justify-content: space-between;
@@ -78,8 +78,8 @@
   gap: 4px;
 }
 
-.entryTitle   { font-size: 7px; color: var(--poke-black); }
-.entryCompany { font-size: 6px; color: var(--poke-red); }
+.entryTitle   { font-size: 12px; color: var(--poke-black); }
+.entryCompany { font-size: 11px; color: var(--poke-red); }
 .entryCompanyEdu { color: var(--poke-blue); }
-.entryPeriod  { font-size: 6px; color: var(--poke-muted); }
-.entryFlavor  { font-size: 6px; color: var(--poke-black); line-height: 1.9; margin-top: 2px; }
+.entryPeriod  { font-size: 11px; color: var(--poke-muted); }
+.entryFlavor  { font-size: 11px; color: var(--poke-black); line-height: 1.9; margin-top: 2px; }
