@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section Mapping</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#1a1a2e; font-family:'Press Start 2P','Courier New',monospace; color:#fff; padding:24px; }
+  h1 { font-size:11px; color:#ffd700; text-align:center; margin-bottom:6px; }
+  .sub { font-size:7px; color:#aaa; text-align:center; margin-bottom:28px; line-height:1.8; }
+
+  .option-block {
+    max-width:860px; margin:0 auto 20px; border:3px solid #444; border-radius:3px;
+    overflow:hidden; cursor:pointer; transition:border-color .15s,transform .15s;
+  }
+  .option-block:hover { border-color:#ffd700; transform:translateY(-2px); }
+  .option-block.selected { border-color:#ffd700; box-shadow:0 0 0 2px #ffd700; }
+
+  .opt-header {
+    background:#cc2200; color:#fff; font-size:8px; padding:8px 14px;
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .opt-body { background:#f5e8d0; padding:14px; display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+  .section-box { background:#fff; border:2px solid #000; padding:8px; text-align:center; }
+  .section-icon { font-size:22px; margin-bottom:6px; }
+  .section-orig { font-size:6px; color:#666; margin-bottom:4px; }
+  .section-mapped { font-size:7px; color:#cc2200; font-weight:bold; }
+  .opt-desc { background:#222; padding:10px 14px; font-size:7px; color:#aaa; line-height:1.9; }
+
+  .option-block.selected .opt-header::after { content:' ✓ SELECTED'; color:#ffd700; }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+</style>
+<script>
+  function pick(el) {
+    document.querySelectorAll('.option-block').forEach(c=>c.classList.remove('selected'));
+    el.classList.add('selected');
+    const choice = el.dataset.choice;
+    const text = el.querySelector('.opt-header span').textContent;
+    try { fetch('/__select',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({choice,text,timestamp:Date.now()})}).catch(()=>{}); } catch(e){}
+    if(window.recordSelection) window.recordSelection(choice, text);
+  }
+</script>
+</head>
+<body>
+
+<h1>How should each section be themed?</h1>
+<p class="sub">Your portfolio has 4 sections. Pick how they map to the Pokemon world.</p>
+
+<!-- Option A -->
+<div class="option-block" data-choice="gym-journey" onclick="pick(this)">
+  <div class="opt-header"><span>A · The Trainer's Journey</span></div>
+  <div class="opt-body">
+    <div class="section-box">
+      <div class="section-icon">🪪</div>
+      <div class="section-orig">HERO</div>
+      <div class="section-mapped">TRAINER CARD</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">🏅</div>
+      <div class="section-orig">EXPERIENCE</div>
+      <div class="section-mapped">GYM BADGES</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">⚡</div>
+      <div class="section-orig">SKILLS</div>
+      <div class="section-mapped">POKEMON STATS</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">🎒</div>
+      <div class="section-orig">CERTIFICATES</div>
+      <div class="section-mapped">KEY ITEMS BAG</div>
+    </div>
+  </div>
+  <div class="opt-desc">Each job = a gym badge earned. Skills = your Pokemon's stat page. Certs = rare Key Items. Tells a story of leveling up through your career.</div>
+</div>
+
+<!-- Option B -->
+<div class="option-block" data-choice="pokedex-entries" onclick="pick(this)">
+  <div class="opt-header"><span>B · The Pokedex Approach</span></div>
+  <div class="opt-body">
+    <div class="section-box">
+      <div class="section-icon">🪪</div>
+      <div class="section-orig">HERO</div>
+      <div class="section-mapped">TRAINER CARD</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">📖</div>
+      <div class="section-orig">EXPERIENCE</div>
+      <div class="section-mapped">POKEDEX ENTRIES</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">📊</div>
+      <div class="section-orig">SKILLS</div>
+      <div class="section-mapped">BASE STATS</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">🏆</div>
+      <div class="section-orig">CERTIFICATES</div>
+      <div class="section-mapped">HALL OF FAME</div>
+    </div>
+  </div>
+  <div class="opt-desc">Each job/company = a Pokedex entry with a fun description. Skills = base stats chart. Certs = Hall of Fame wall. Playful and creative.</div>
+</div>
+
+<!-- Option C -->
+<div class="option-block" data-choice="town-map" onclick="pick(this)">
+  <div class="opt-header"><span>C · The Town Map</span></div>
+  <div class="opt-body">
+    <div class="section-box">
+      <div class="section-icon">🪪</div>
+      <div class="section-orig">HERO</div>
+      <div class="section-mapped">TRAINER CARD</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">🗺️</div>
+      <div class="section-orig">EXPERIENCE</div>
+      <div class="section-mapped">TOWN MAP STOPS</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">⚡</div>
+      <div class="section-orig">SKILLS</div>
+      <div class="section-mapped">MOVES / TMs</div>
+    </div>
+    <div class="section-box">
+      <div class="section-icon">⭐</div>
+      <div class="section-orig">CERTIFICATES</div>
+      <div class="section-mapped">STAR BADGES</div>
+    </div>
+  </div>
+  <div class="opt-desc">Your career as a journey across a pixel-art town map. Each company is a city you visited. Skills = TM moves learned. Most visual / story-driven option.</div>
+</div>
+
+<div style="text-align:center;font-size:6px;color:#666;margin-top:16px">Click to pick · or describe a mix below</div>
+
+</body>
+</html>

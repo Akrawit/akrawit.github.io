@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokemon Style Preview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a1a2e;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    color: #fff;
+    padding: 24px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 13px;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    font-size: 8px;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 32px;
+  }
+
+  .poke-card {
+    border: 3px solid #444;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.15s, transform 0.15s;
+    background: #111;
+  }
+  .poke-card:hover { border-color: #ffd700; transform: translateY(-2px); }
+  .poke-card.selected { border-color: #ffd700; box-shadow: 0 0 0 2px #ffd700; }
+
+  .poke-card-label {
+    background: #222;
+    padding: 8px 12px;
+    font-size: 8px;
+    color: #ffd700;
+    border-bottom: 2px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .poke-card-desc {
+    padding: 10px 12px;
+    font-size: 7px;
+    color: #aaa;
+    line-height: 1.8;
+    border-top: 2px solid #333;
+  }
+
+  /* ── Variant A: Classic Gen 1 Battle ── */
+  .gen1 {
+    background: #c8d8c8;
+    padding: 12px;
+    font-family: 'Press Start 2P', monospace;
+    image-rendering: pixelated;
+  }
+  .gen1-enemy-box {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    width: 60%;
+  }
+  .gen1-enemy-name { font-size: 8px; color: #000; margin-bottom: 4px; }
+  .gen1-hp-label { font-size: 7px; color: #000; margin-bottom: 2px; }
+  .hp-bar-outer { background: #000; height: 6px; padding: 1px; width: 80px; display: inline-block; }
+  .hp-bar-inner { background: #00c800; height: 4px; width: 70%; }
+  .gen1-sprite-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 60px;
+    margin-bottom: 6px;
+  }
+  .sprite-enemy {
+    font-size: 26px;
+    line-height: 1;
+    image-rendering: pixelated;
+  }
+  .sprite-player {
+    font-size: 22px;
+    line-height: 1;
+    align-self: flex-end;
+  }
+  .gen1-player-box {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 6px 10px;
+    margin-left: auto;
+    width: 65%;
+    margin-bottom: 6px;
+  }
+  .gen1-dialog {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 6px 8px;
+    font-size: 7px;
+    color: #000;
+    line-height: 1.8;
+  }
+  .gen1-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4px;
+  }
+  .gen1-menu-item {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 4px 6px;
+    font-size: 7px;
+    color: #000;
+    text-align: center;
+  }
+  .gen1-menu-item.active { background: #000; color: #fff; }
+
+  /* ── Variant B: GBA / FireRed Style ── */
+  .gba {
+    background: #f0f0e8;
+    padding: 12px;
+  }
+  .gba-topbar {
+    background: #4070c8;
+    color: #fff;
+    font-size: 7px;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .trainer-card {
+    background: #fff;
+    border: 3px solid #000;
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .trainer-sprite { font-size: 36px; line-height: 1; }
+  .trainer-info { flex: 1; }
+  .trainer-name { font-size: 9px; color: #000; margin-bottom: 4px; }
+  .trainer-id { font-size: 7px; color: #666; margin-bottom: 6px; }
+  .trainer-badge { display: flex; gap: 4px; flex-wrap: wrap; }
+  .badge { font-size: 14px; }
+  .gba-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+  .gba-menu-item {
+    background: #4070c8;
+    color: #fff;
+    font-size: 7px;
+    padding: 5px 8px;
+    border: 2px solid #000;
+  }
+  .gba-menu-item.highlight { background: #e04060; }
+
+  /* ── Variant C: Pokemon Stats Screen ── */
+  .stats-screen {
+    background: #e8f0f8;
+    padding: 10px;
+  }
+  .stats-header {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+  }
+  .stats-sprite { font-size: 32px; }
+  .stats-name-block { flex: 1; }
+  .stats-name { font-size: 9px; color: #000; margin-bottom: 2px; }
+  .stats-type { background: #e04060; color: #fff; font-size: 6px; padding: 2px 6px; display: inline-block; margin-bottom: 4px; }
+  .stats-type2 { background: #4070c8; color: #fff; font-size: 6px; padding: 2px 6px; display: inline-block; }
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .stat-name { font-size: 6px; color: #000; width: 24px; }
+  .stat-bar-bg { background: #ccc; height: 5px; flex: 1; }
+  .stat-bar { height: 5px; }
+  .stat-val { font-size: 6px; color: #000; width: 20px; text-align: right; }
+
+  /* ── Variant D: Pokedex Entry ── */
+  .pokedex {
+    background: #c0000a;
+    padding: 10px;
+  }
+  .dex-screen {
+    background: #90ee60;
+    border: 4px solid #000;
+    padding: 8px;
+    margin-bottom: 6px;
+    image-rendering: pixelated;
+    display: flex;
+    gap: 8px;
+  }
+  .dex-sprite-box {
+    background: #68c838;
+    border: 2px solid #000;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+  }
+  .dex-text { flex: 1; }
+  .dex-number { font-size: 7px; color: #000; margin-bottom: 3px; }
+  .dex-entry-name { font-size: 9px; color: #000; margin-bottom: 4px; }
+  .dex-desc { font-size: 6px; color: #000; line-height: 1.9; }
+  .dex-buttons {
+    display: flex;
+    gap: 4px;
+  }
+  .dex-btn {
+    background: #000;
+    color: #90ee60;
+    font-size: 6px;
+    padding: 4px 8px;
+    border: 2px solid #333;
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Selection highlight */
+  .poke-card.selected .poke-card-label::after {
+    content: '✓ SELECTED';
+    color: #ffd700;
+    font-size: 7px;
+  }
+
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  .blink { animation: blink 1s infinite; }
+</style>
+<script>
+  function selectCard(el) {
+    document.querySelectorAll('.poke-card').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+    const choice = el.dataset.choice;
+    const text = el.querySelector('.poke-card-label span').textContent;
+    if (window.recordSelection) window.recordSelection(choice, text);
+    else {
+      try {
+        fetch('/__select', {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({choice,text,timestamp:Date.now()})}).catch(()=>{});
+      } catch(e) {}
+    }
+  }
+</script>
+</head>
+<body>
+
+<h1>Which Pokemon style fits best?</h1>
+<p class="subtitle">Each flavor of Pokemon has a distinct look — pick what resonates</p>
+
+<div class="cards-grid">
+
+  <!-- A: Gen 1 Battle -->
+  <div class="poke-card" data-choice="gen1-battle" onclick="selectCard(this)">
+    <div class="poke-card-label"><span>A · Gen 1 Battle Screen</span></div>
+    <div class="gen1" style="min-height:200px">
+      <div class="gen1-enemy-box">
+        <div class="gen1-enemy-name">AGODA LVL 10</div>
+        <div class="gen1-hp-label">HP: <span class="hp-bar-outer"><span class="hp-bar-inner"></span></span></div>
+      </div>
+      <div class="gen1-sprite-area">
+        <div class="sprite-enemy">🏢</div>
+        <div class="sprite-player">🧑‍💻</div>
+      </div>
+      <div class="gen1-player-box">
+        <div class="gen1-enemy-name">AKRAWIT LVL 99</div>
+        <div class="gen1-hp-label">HP: <span class="hp-bar-outer"><span class="hp-bar-inner" style="width:95%;background:#00c800"></span></span></div>
+      </div>
+      <div class="gen1-dialog">
+        What will AKRAWIT do?
+        <div class="gen1-menu">
+          <div class="gen1-menu-item active">▶ SKILLS</div>
+          <div class="gen1-menu-item">WORK EXP</div>
+          <div class="gen1-menu-item">CERTS</div>
+          <div class="gen1-menu-item">CONTACT</div>
+        </div>
+      </div>
+    </div>
+    <div class="poke-card-desc">Classic battle UI: HP bars, battle menu, sprite area. Sections = battle commands. Very iconic.</div>
+  </div>
+
+  <!-- B: Trainer Card / GBA -->
+  <div class="poke-card" data-choice="trainer-card" onclick="selectCard(this)">
+    <div class="poke-card-label"><span>B · Trainer Card (GBA Style)</span></div>
+    <div class="gba" style="min-height:200px">
+      <div class="gba-topbar"><span>TRAINER CARD</span><span>ID: 000001</span></div>
+      <div class="trainer-card">
+        <div class="trainer-sprite">🧑‍💻</div>
+        <div class="trainer-info">
+          <div class="trainer-name">AKRAWIT</div>
+          <div class="trainer-id">STAFF ENG · LVL 99</div>
+          <div class="trainer-badge">
+            <span class="badge" title="C#">🔵</span>
+            <span class="badge" title="Java">☕</span>
+            <span class="badge" title="JS">🟡</span>
+            <span class="badge" title="SQL">🗄️</span>
+          </div>
+        </div>
+      </div>
+      <div class="gba-menu">
+        <div class="gba-menu-item highlight">RESUME</div>
+        <div class="gba-menu-item">SKILLS</div>
+        <div class="gba-menu-item">WORK EXP</div>
+        <div class="gba-menu-item">CERTS</div>
+      </div>
+    </div>
+    <div class="poke-card-desc">Trainer card as hero, badges = skills, colorful GBA palette. Warm and friendly.</div>
+  </div>
+
+  <!-- C: Stats Screen -->
+  <div class="poke-card" data-choice="stats-screen" onclick="selectCard(this)">
+    <div class="poke-card-label"><span>C · Pokemon Stats Screen</span></div>
+    <div class="stats-screen" style="min-height:200px">
+      <div class="stats-header">
+        <div class="stats-sprite">🧑‍💻</div>
+        <div class="stats-name-block">
+          <div class="stats-name">AKRAWIT</div>
+          <span class="stats-type">BACKEND</span>
+          <span class="stats-type2">FULLSTACK</span>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-name" style="width:32px;font-size:6px">C#</div>
+        <div class="stat-bar-bg"><div class="stat-bar" style="width:80%;background:#e04060"></div></div>
+        <div class="stat-val">80</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-name" style="width:32px;font-size:6px">JAVA</div>
+        <div class="stat-bar-bg"><div class="stat-bar" style="width:70%;background:#4070c8"></div></div>
+        <div class="stat-val">70</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-name" style="width:32px;font-size:6px">JS</div>
+        <div class="stat-bar-bg"><div class="stat-bar" style="width:60%;background:#f0c000"></div></div>
+        <div class="stat-val">60</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-name" style="width:32px;font-size:6px">SQL</div>
+        <div class="stat-bar-bg"><div class="stat-bar" style="width:50%;background:#40b040"></div></div>
+        <div class="stat-val">50</div>
+      </div>
+    </div>
+    <div class="poke-card-desc">Your portfolio as a Pokemon stat page — skills as stats, type = specialization. Clean data display.</div>
+  </div>
+
+  <!-- D: Pokedex -->
+  <div class="poke-card" data-choice="pokedex" onclick="selectCard(this)">
+    <div class="poke-card-label"><span>D · Pokedex Entry</span></div>
+    <div class="pokedex" style="min-height:200px">
+      <div class="dex-screen">
+        <div class="dex-sprite-box">🧑‍💻</div>
+        <div class="dex-text">
+          <div class="dex-number">#001 ENGINEERMON</div>
+          <div class="dex-entry-name">AKRAWIT S.</div>
+          <div class="dex-desc">A rare Staff Engineer species found deep in Agoda's servers. Known for marathon running and code optimization.</div>
+        </div>
+      </div>
+      <div class="dex-buttons">
+        <div class="dex-btn">EXP</div>
+        <div class="dex-btn">SKILLS</div>
+        <div class="dex-btn">CERTS</div>
+      </div>
+    </div>
+    <div class="poke-card-desc">Each section is a Pokedex entry. Fun, playful, and very Pokemon. Great for storytelling.</div>
+  </div>
+
+</div>
+
+<div style="text-align:center;font-size:7px;color:#888;margin-top:8px">
+  Click a card to select · or describe a mix in the terminal
+</div>
+
+</body>
+</html>

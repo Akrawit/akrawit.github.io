@@ -1,0 +1,83 @@
+<h2>Which 8-bit style speaks to you?</h2>
+<p class="subtitle">This sets the overall look and feel of the portfolio redesign</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="nes-rpg" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#0a0a1a;padding:16px;font-family:'Courier New',monospace;min-height:160px;position:relative;overflow:hidden">
+      <div style="color:#ffe066;font-size:11px;letter-spacing:2px;margin-bottom:8px">★ AKRAWIT ★</div>
+      <div style="color:#fff;font-size:9px;margin-bottom:4px">╔══════════════╗</div>
+      <div style="color:#fff;font-size:9px;margin-bottom:4px">║  STAFF ENG   ║</div>
+      <div style="color:#fff;font-size:9px;margin-bottom:4px">║  LVL 99 ↑    ║</div>
+      <div style="color:#fff;font-size:9px;margin-bottom:12px">╚══════════════╝</div>
+      <div style="display:flex;gap:8px;margin-top:4px">
+        <div style="background:#3c7eff;color:#fff;font-size:8px;padding:3px 6px">C# ████████</div>
+        <div style="background:#ff3c3c;color:#fff;font-size:8px;padding:3px 6px">Java ███████</div>
+      </div>
+      <div style="position:absolute;bottom:8px;right:12px;color:#3c7eff;font-size:8px;animation:blink 1s infinite">▼ SCROLL</div>
+    </div>
+    <div class="card-body">
+      <h3>NES / RPG</h3>
+      <p>Dark background, dialogue boxes, stat bars, character sprite. Like Final Fantasy or Zelda.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="arcade" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#000;padding:16px;font-family:'Courier New',monospace;min-height:160px;position:relative;overflow:hidden;border:2px solid #ff0">
+      <div style="color:#ff0;font-size:14px;font-weight:bold;text-align:center;letter-spacing:4px;text-shadow:0 0 8px #ff0">AKRAWIT</div>
+      <div style="color:#0ff;font-size:9px;text-align:center;margin-bottom:10px;text-shadow:0 0 6px #0ff">INSERT COIN TO CONTINUE</div>
+      <div style="display:flex;justify-content:space-around;margin:8px 0">
+        <div style="color:#f0f;font-size:10px;text-shadow:0 0 6px #f0f">◆ SKILLS</div>
+        <div style="color:#0f0;font-size:10px;text-shadow:0 0 6px #0f0">◆ EXP</div>
+        <div style="color:#ff0;font-size:10px;text-shadow:0 0 6px #ff0">◆ CERTS</div>
+      </div>
+      <div style="color:#f0f;font-size:8px;text-align:center;margin-top:12px">HIGH SCORE: 999999</div>
+      <div style="color:#fff;font-size:8px;text-align:center;margin-top:4px;animation:blink 0.8s infinite">© 2025 AKRAWIT INC.</div>
+    </div>
+    <div class="card-body">
+      <h3>Arcade Cabinet</h3>
+      <p>Neon on black, scanlines, "INSERT COIN" vibes. Like Pac-Man, Space Invaders, or a retro arcade.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="gameboy" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#9bbc0f;padding:16px;font-family:'Courier New',monospace;min-height:160px;position:relative">
+      <div style="background:#306230;color:#9bbc0f;font-size:10px;padding:8px;margin-bottom:8px;text-align:center">
+        AKRAWIT.EXE
+      </div>
+      <div style="color:#306230;font-size:9px;margin-bottom:4px">■ EXPERIENCE</div>
+      <div style="color:#306230;font-size:9px;margin-bottom:4px">■ SKILLS</div>
+      <div style="color:#306230;font-size:9px;margin-bottom:4px">□ CERTIFICATES</div>
+      <div style="color:#306230;font-size:9px;margin-bottom:4px">□ CONTACT</div>
+      <div style="position:absolute;bottom:8px;right:10px;color:#306230;font-size:7px">A:SELECT B:BACK</div>
+    </div>
+    <div class="card-body">
+      <h3>Game Boy</h3>
+      <p>4-shade green palette, monochrome pixel UI. Clean and nostalgic, like original Game Boy games.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="modern-pixel" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#1a1a2e;padding:16px;font-family:'Courier New',monospace;min-height:160px">
+      <div style="color:#e94560;font-size:13px;font-weight:bold;letter-spacing:3px;margin-bottom:4px">AKRAWIT</div>
+      <div style="color:#a8dadc;font-size:9px;margin-bottom:12px">STAFF SOFTWARE ENGINEER</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <div style="background:#e94560;color:#fff;font-size:8px;padding:3px 8px;image-rendering:pixelated">C#</div>
+        <div style="background:#16213e;border:1px solid #e94560;color:#e94560;font-size:8px;padding:3px 8px">Java</div>
+        <div style="background:#16213e;border:1px solid #a8dadc;color:#a8dadc;font-size:8px;padding:3px 8px">JS</div>
+      </div>
+      <div style="margin-top:12px;background:#16213e;padding:6px;border-left:2px solid #e94560">
+        <div style="color:#a8dadc;font-size:8px">▶ Agoda · Staff Eng · 2024–now</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Modern Pixel Art</h3>
+      <p>Pixel grid, rich colors, dark theme. Like Celeste or Stardew Valley — stylish but clearly retro.</p>
+    </div>
+  </div>
+
+</div>
+
+<style>
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+</style>
